@@ -1,0 +1,48 @@
+{
+	"name": "@nesercode/vuepress-plugin-up-and-down",
+	"version": "1.0.0",
+	"description": "VuePress plugin - up and down",
+	"keywords": [
+		"vuepress-plugin",
+		"vuepress",
+		"plugin",
+		"up",
+		"down"
+	],
+	"homepage": "https://github.com/nesercode",
+	"bugs": {
+		"url": "https://github.com/nesercode/vuepress-plugin-up-and-down/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nesercode/vuepress-plugin-up-and-down.git"
+	},
+	"license": "MIT",
+	"author": "nesercode",
+	"type": "module",
+	"exports": {
+		".": "./lib/node/index.js",
+		"./client": "./lib/client/index.js",
+		"./package.json": "./package.json"
+	},
+	"main": "./lib/node/index.js",
+	"types": "./lib/node/index.d.ts",
+	"files": [
+		"lib"
+	],
+	"dependencies": {
+		"ts-debounce": "^4.0.0",
+		"vue": "^3.2.45",
+		"@vuepress/client": "2.0.0-beta.60",
+		"@vuepress/core": "2.0.0-beta.60",
+		"@vuepress/utils": "2.0.0-beta.60"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc -b tsconfig.build.json",
+		"clean": "rimraf lib *.tsbuildinfo",
+		"copy": "cpx \"src/**/*.{css,svg}\" lib"
+	}
+}

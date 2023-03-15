@@ -1,0 +1,97 @@
+.up-and-down {
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+}
+
+.back-to-top,
+.down-to-bottom{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--up-and-down-color);
+  border-radius: 0.4rem;
+  padding: 0.1rem;
+  margin-bottom: 0.5rem;
+
+  min-width: 1.75rem;
+
+  background-opacity: 0.7;
+  
+  transition: all ease-in-out 0.3s;
+  z-index: var(--up-and-down-z-index);
+}
+
+.back-to-top::after,
+.down-to-bottom::after {
+  color: var(--up-and-down-color);
+  font-size: .4rem;
+  font-weight: 600;
+}
+
+.back-to-top::after {
+  content: 'UP';
+}
+
+.down-to-bottom::after {
+  content: 'DOWN';
+}
+
+.up-and-down-mask{
+  width: .8rem;
+  height: .6rem;
+  background-color: var(--up-and-down-color);
+  mask: url('up-and-down.svg') no-repeat;
+
+  transform: translateY(25%);
+}
+
+.down-to-bottom .up-and-down-mask {
+  transform: rotate(180deg);
+}
+
+.back-to-top:hover,
+.down-to-bottom:hover {
+  background-color: var(--up-and-down-color-hover);
+}
+
+.back-to-top:hover::after,
+.down-to-bottom:hover::after {
+  color: white;
+}
+
+.back-to-top:hover .up-and-down-mask,
+.down-to-bottom:hover .up-and-down-mask{
+  background-color: white;
+}
+
+@media (max-width: 959px) {
+  .up-and-down {
+    display: none;
+  }
+}
+
+@media print {
+  .up-and-down {
+    display: none;
+  }
+}
+
+.up-and-down-enter-active,
+.up-and-down-leave-active {
+  transition: all 0.3s;
+}
+
+.up-and-down-enter-from,
+.up-and-down-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all ease-in-out 0.3s;
+}
+
+.up-and-down-enter-from,
+.up-and-down-leave-to {
+  transform: translateY(-100%);
+}
