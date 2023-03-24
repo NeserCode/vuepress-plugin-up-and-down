@@ -1,6 +1,6 @@
 {
 	"name": "@nesercode/vuepress-plugin-up-and-down",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "VuePress plugin - up and down",
 	"keywords": [
 		"vuepress-plugin",
